@@ -345,7 +345,7 @@ button {
   }
 
   .header__link-item:active::after {
-    transform: translateY(-8px);
+    transform: scale(0);
   }
 
   .header__btn-search:focus-visible path {
@@ -1715,4 +1715,17 @@ button {
     width: 445px;
     background-size: 100%, 100%;
   }
+}
+
+/* !!!!!!!<ABOUT-US>!!!!!!! */
+
+/* about-us */
+/* для Mobile 320 */
+.about-us {
+  background-color: var(--color-dark);
+}
+
+.about-us__container {
+  padding: 54px 32px;
+  width: min(100%, 600px);
 }
