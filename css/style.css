@@ -1836,19 +1836,19 @@ textarea::-webkit-scrollbar {
   min-height: 50px;
   border: 1px solid var(--color-white);
   border-radius: 40px;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1;
   background-color: transparent;
   color: var(--color-white);
   outline: none;
 }
 
-.about-us__input::placeholder {
+/* .about-us__input::placeholder {
   font-size: 16px;
   line-height: 1;
   font-weight: 400;
   color: var(--color-grey);
-}
+} */
 
 .about-us__btn {
   padding: 17px 44px;
@@ -1881,6 +1881,7 @@ textarea::-webkit-scrollbar {
   line-height: 1;
   font-weight: 500;
   color: var(--color-white);
+  transition: color .3s;
 }
 
 .about-us__custom-checkbox::before {
@@ -1916,6 +1917,42 @@ textarea::-webkit-scrollbar {
   outline-offset: 3px;
   outline: 1px solid var(--color-blueviolet);
 }
+
+  /* Попробовал :placeholder-shown  */
+
+  .about-us__wrap-input {
+    position: relative;
+  }
+
+  .about-us__label-input-name {
+    position: absolute;
+    left: 35px;
+    top: 20px;
+    font-size: 16px;
+    color: var(--color-grey);
+    transition: translate .4s;
+  }
+
+  .about-us__input:not(:placeholder-shown)+.about-us__label-input-name {
+    translate: 2px -35px;
+    font-size: 12px;
+    color: #AA9DFA;
+  }
+
+  .about-us__label-input-email {
+    position: absolute;
+    left: 35px;
+    bottom: 15px;
+    font-size: 16px;
+    color: var(--color-grey);
+    transition: translate .4s;
+  }
+
+  .about-us__input:not(:placeholder-shown)+.about-us__label-input-email {
+    translate: 2px -38px;
+    font-size: 12px;
+    color: #AA9DFA;
+  }
 
 /* about-us */
 /* для 768 */
@@ -1992,7 +2029,7 @@ textarea::-webkit-scrollbar {
     min-height: 70px;
   }
 
-  .about-us__input::placeholder {
+  .about-us__input {
     font-size: 20px;
   }
 
@@ -2000,6 +2037,7 @@ textarea::-webkit-scrollbar {
     padding: 25px 54px;
     margin-bottom: 30px;
     font-size: 20px;
+    transition: background-color .3s;
   }
 
   .about-us__custom-checkbox {
@@ -2036,6 +2074,31 @@ textarea::-webkit-scrollbar {
     background-color: transparent;
   }
 
+  .about-us__btn:focus-visible {
+    outline: 2px solid var(--color-blueviolet);
+    background-color: var(--color-lilac);
+  }
+
+  .about-us__btn:hover {
+    outline: none;
+    background-color: var(--color-lilac);
+  }
+
+  .about-us__btn:active {
+    outline: none;
+    background-color: var(--color-blueviolet);
+  }
+
+  .about-us__custom-checkbox:focus-visible {
+    outline-offset: 3px;
+    outline: 1px solid var(--color-lilac);
+  }
+
+  .about-us__custom-checkbox:hover {
+    color: var(--color-lilac);
+  }
+
+
   /* Попробовал :placeholder-shown  */
 
   .about-us__wrap-input {
@@ -2044,33 +2107,154 @@ textarea::-webkit-scrollbar {
 
   .about-us__label-input-name {
     position: absolute;
-    left:35px;
-    top:25px;
+    left: 35px;
+    top: 25px;
     font-size: 20px;
     color: var(--color-grey);
     transition: translate .4s;
   }
 
-  .about-us__input:not(:placeholder-shown) + .about-us__label-input-name {
-    translate:  5px -40px;
+  .about-us__input:not(:placeholder-shown)+.about-us__label-input-name {
+    translate: 5px -40px;
     font-size: 15px;
     color: #AA9DFA;
   }
 
   .about-us__label-input-email {
     position: absolute;
-    left:35px;
-    bottom:25px;
+    left: 35px;
+    bottom: 25px;
     font-size: 20px;
     color: var(--color-grey);
     transition: translate .4s;
   }
 
-  .about-us__input:not(:placeholder-shown) + .about-us__label-input-email {
-    translate:  5px -45px;
+  .about-us__input:not(:placeholder-shown)+.about-us__label-input-email {
+    translate: 5px -45px;
     font-size: 15px;
     color: #AA9DFA;
   }
 
   /* код 899 - 907; у input атрибут placeholder оставил пустым, в label прописал текст, который абсолютно спозиционировал в input. Если бы label шел до input, тогда стили надо делать с помощью псевдокласса :has()*/
+}
+
+
+/* about-us */
+/* для Tablet 1040 */
+
+@media(min-width: 1024px) {
+  .about-us__container {
+    width: 854px;
+  }
+
+  .about-us__content-text {
+    width: 539px;
+  }
+
+
+  .about-us__inner {
+    position: relative;
+  }
+
+  /* позиционирую относительно about-us__inner */
+  .about-us__box-figures {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 255px;
+    min-height: 255px;
+  }
+
+  .about-us__figur-spiral {
+    display: none;
+  }
+
+  .about-us__figur-rays {
+    flex-basis: 255px;
+    min-height: 255px;
+  }
+
+  .about-us__img {
+    margin-bottom: 30px;
+    max-width: 397px;
+  }
+
+.about-us__wrap-input {
+  height: 70px;
+}
+
+  .about-us__input {
+    width: 48%;
+  }
+
+    /* передвинул name */
+    .about-us__label-input-name {
+      top: 27px;
+    }
+
+  /* передвинул email */
+  .about-us__label-input-email {
+    left: 460px;
+    top: 27px;
+  }
+
+  .about-us__input:not(:placeholder-shown)+.about-us__label-input-name {
+    translate: 15px -42px;
+  }
+
+  .about-us__input:not(:placeholder-shown)+.about-us__label-input-email {
+    translate: 15px -42px;
+  }
+}
+
+/* about-us */
+/* для Desktop 1140 */
+
+@media(min-width: 1140px) {
+  .about-us__container {
+    width: 1110px;
+  }
+
+  .about-us__content-text {
+    width: 634px;
+  }
+
+
+  /* позиционирую относительно about-us__inner */
+  .about-us__box-figures {
+    width: 425px;
+    min-height: 290px;
+  }
+
+  /* возвращаем спираль, но другую, другой svg */
+  .about-us__figur-spiral {
+    position: initial;
+    display: block;
+    width: 160px;
+    background-image: url(../img/svg/spiral.svg);
+  }
+
+  /* задаем сколько отступов будет между карточками, тем самым меняем ширину через формулу, прописана для самой карточки */
+  .about-us__items {
+    --offsets:3;
+  }
+
+  .about-us__img {
+    max-width: 255px;
+  }
+
+  .about-us__form {
+    max-width: 920px;
+  }
+
+  .about-us__input {
+    width: 48%;
+    height: 70px;
+  }
+
+  /* передвинул email */
+  .about-us__label-input-email {
+    left: 507px;
+  }
+
 }
