@@ -1686,7 +1686,7 @@ button {
 
 
 /* info */
-/* для Desktop 1040 */
+/* для Desktop 1140 */
 
 @media(min-width: 1140px) {
   .info__container {
@@ -2257,4 +2257,201 @@ textarea::-webkit-scrollbar {
     left: 507px;
   }
 
+}
+
+/* !!!!!!!< FOOTER >!!!!!!! */
+
+/* footer */
+/* для Mobile 320 */
+
+.footer {
+  background-color: var(--color-dark-grey);
+  position: relative;
+  z-index: 1;
+}
+
+.footer__container {
+  padding: 54px 32px;
+  padding-bottom: 10px;
+  width: min(100%, 600px);
+}
+
+.footer__wrap-logo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items:center;
+  gap: 20px;
+  min-height: 76px;
+}
+
+.footer__network-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer__svg {
+  width: 36px;
+  cursor: pointer;
+}
+
+.footer__svg path {
+  fill: var(--color-medium-grey);
+  transition: fill .3s;
+}
+
+.footer__link-network:focus-visible path {
+  fill: var(--color-lilac);
+}
+
+.footer__link-network:hover path {
+  fill: var(--color-light-blueviolet);
+}
+
+.footer__link-network:active path {
+  fill: var(--color-blueviolet);
+}
+
+.footer__items {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  columns: 2;
+}
+
+.footer__items::before {
+  content: "";
+  position: absolute;
+  top: 144px;
+  left: 0;
+  width: 100%;
+  height: 216px;
+  background-color: var(--color-dark);
+  z-index: -1;
+}
+
+.footer__item {
+  margin-bottom: 24px;
+  font-size: 12px;
+  color: var(--color-white);
+}
+
+.footer__link-items {
+  transition: color .3s;
+}
+
+.footer__link-items:focus-visible {
+  color:var(--color-lilac);
+}
+
+.footer__link-items:hover {
+  color:var(--color-light-blueviolet);
+}
+
+.footer__link-items:active {
+  color:var(--color-blueviolet);
+}
+
+.footer__wrap-copyright::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 32px;
+  width: 100%;
+  height: 10px;
+  background-image: url(../img/footer/wave.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer__copyright {
+  padding-top: 30px;
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.03;
+  color: var(--color-grey);
+}
+
+/* footer */
+/* для 768 */
+
+@media(min-width:768px) {
+  .footer__container {
+    padding: 94px 15px;
+    padding-bottom: 10px;
+    width: 570px;
+  }
+
+  .footer__items {
+    transform: translateX(50px);
+    padding-top: 80px;
+    padding-bottom: 80px;
+    columns: 3;
+  }
+
+  .footer__items::before {
+    content: "";
+    display: none;
+  }
+
+  .footer__item {
+    margin-bottom: 24px;
+    font-size: 16px;
+  }
+
+  .footer__copyright {
+    font-size: 16px;
+  }
+
+  .footer__wrap-copyright::after {
+    bottom: 37px;
+  }
+}
+
+/* footer */
+/* для Tablet 1024 */
+@media(min-width:1024px) {
+  .footer__container {
+    padding: 94px 15px;
+    padding-bottom: 10px;
+    width: 854px;
+  }
+
+  .footer__wrap-logo {
+    width: 160px;
+  }
+
+  /* сместил список относительно логотипо, возможно надо было через флекс делать, но я не обернул их еще в один div в самом начале */
+  .footer__items {
+    position: relative;
+    top: -80px;
+    left: 420px;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 445px;
+    transform: initial;
+    columns: 3;
+  }
+
+}
+
+/* footer */
+/* для Desctop */
+
+@media(min-width:1140px) {
+  .footer__container {
+    padding: 94px 15px;
+    padding-bottom: 10px;
+    width: 1110px;
+  }
+
+  .footer__items {
+    left: 660px;
+  }
+
+  .footer__wrap-copyright::after {
+    background-size: 100% 100%;
+  }
 }
